@@ -8,8 +8,6 @@ return {
         end
       end,
     },
-  
-    -- Ensure TypeScript and Tailwind LSP are installed
     {
       "williamboman/mason.nvim",
       opts = function(_, opts)
@@ -17,12 +15,11 @@ return {
         vim.list_extend(opts.ensure_installed, {
           "typescript-language-server",
           "eslint-lsp",
-          "tailwindcss-language-server",
         })
       end,
     },
   
-    -- Configuring LSP for TypeScript, React, and Tailwind
+    -- Configuring LSP for TypeScripTailwindt, React, and 
     {
       "neovim/nvim-lspconfig",
       opts = {
@@ -50,15 +47,6 @@ return {
                   includeInlayFunctionLikeReturnTypeHints = true,
                   includeInlayEnumMemberValueHints = true,
                 },
-              },
-            },
-          },
-          tailwindcss = {
-            filetypes = { "typescriptreact", "typescript", "javascriptreact", "javascript", "html", "css" },
-            init_options = {
-              userLanguages = {
-                typescriptreact = "typescript",
-                javascriptreact = "javascript",
               },
             },
           },
@@ -101,16 +89,6 @@ return {
     {
       "dsznajder/vscode-es7-javascript-react-snippets",
       build = "yarn install --frozen-lockfile && yarn compile",
-    },
-  
-    -- Tailwind CSS class name intellisense
-    {
-      "roobert/tailwindcss-colorizer-cmp.nvim",
-      config = function()
-        require("tailwindcss-colorizer-cmp").setup({
-          color_square_width = 2,
-        })
-      end,
     },
   
     -- Optional: Add a React component file creator
