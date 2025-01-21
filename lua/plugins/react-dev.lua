@@ -61,8 +61,8 @@ return {
         local nls = require("null-ls")
         opts.sources = vim.list_extend(opts.sources or {}, {
           nls.builtins.formatting.prettier,
-          nls.builtins.diagnostics.eslint,
-          nls.builtins.code_actions.eslint,
+--          nls.builtins.diagnostics.eslint,
+--         nls.builtins.code_actions.eslint,
         })
       end,
     },
@@ -83,12 +83,6 @@ return {
           { { name = "nvim_lsp" }, { name = "luasnip" } }
         ))
       end,
-    },
-  
-    -- React snippets
-    {
-      "dsznajder/vscode-es7-javascript-react-snippets",
-      build = "yarn install --frozen-lockfile && yarn compile",
     },
   
     -- Optional: Add a React component file creator
